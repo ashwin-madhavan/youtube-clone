@@ -7,6 +7,7 @@ import * as functions from "firebase-functions";
 import {initializeApp} from "firebase-admin/app";
 import {Firestore} from "firebase-admin/firestore";
 import * as logger from "firebase-functions/logger";
+
 import {Storage} from "@google-cloud/storage";
 import {onCall} from "firebase-functions/v2/https";
 
@@ -14,8 +15,18 @@ initializeApp();
 
 const firestore = new Firestore();
 const storage = new Storage();
+const rawVideoBucketName = "nc-yt-raw-videos";
 
-const rawVideoBucketName = "am24-yt-raw-videos";
+const videoCollectionId = "videos";
+
+export interface Video {
+  id?: string,
+  uid?: string,
+  filename?: string,
+  status?: "processing" | "processed",
+  title?: string,
+  description?: string
+}
 
 export const createUser = functions.auth.user().onCreate((user) => {
   const userInfo = {
@@ -28,6 +39,7 @@ export const createUser = functions.auth.user().onCreate((user) => {
   logger.info(`User Created: ${JSON.stringify(userInfo)}`);
   return;
 });
+
 
 export const generateUploadUrl = onCall({maxInstances: 1}, async (request) => {
   // Check if the user is authentication
@@ -53,4 +65,10 @@ export const generateUploadUrl = onCall({maxInstances: 1}, async (request) => {
   });
 
   return {url, fileName};
+});
+
+export const getVideos = onCall({maxInstances: 1}, async () => {
+  const snapshot =
+    await firestore.collection(videoCollectionId).limit(10).get();
+  return snapshot.docs.map((doc) => doc.data());
 });
