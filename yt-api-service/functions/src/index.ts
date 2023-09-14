@@ -15,7 +15,7 @@ initializeApp();
 
 const firestore = new Firestore();
 const storage = new Storage();
-const rawVideoBucketName = "nc-yt-raw-videos";
+const rawVideoBucketName = "am24-yt-raw-videos";
 
 const videoCollectionId = "videos";
 
