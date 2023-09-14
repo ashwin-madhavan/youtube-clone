@@ -1,6 +1,6 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation';
 
 export default function Watch() {
   const videoPrefix = 'https://storage.googleapis.com/am24-yt-processed-videos/';
@@ -9,7 +9,7 @@ export default function Watch() {
   return (
     <div>
       <h1>Watch Page</h1>
-      { <video controls src={videoPrefix + videoSrc}/> }
+      <video controls src={videoPrefix + videoSrc}/>
     </div>
   );
 }

@@ -14,8 +14,6 @@ const firebaseConfig = {
   apiKey: "AIzaSyATnPbr01SydPCSt_C0UZ9-dnqD0ew5I9k",
   authDomain: "yt-clone-ba538.firebaseapp.com",
   projectId: "yt-clone-ba538",
-  storageBucket: "yt-clone-ba538.appspot.com",
-  messagingSenderId: "810733451990",
   appId: "1:810733451990:web:c1431aecb112680f5ea777"
 };
 
