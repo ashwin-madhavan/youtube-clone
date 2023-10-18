@@ -1,4 +1,4 @@
-# youtube-clone - Full-Stack Web App
+# Youtube Clone - Full-Stack Web App
 > _This project was based off the NeetCode Full-Stack System Design project tutorial
 
 <p align="justify">
