@@ -10,6 +10,10 @@ Click the following link to see the live demo:
 <a href="https://yt-web-client-ydjl4yvceq-uc.a.run.app/">Link</a>
 </p>
 
+## Screenshots
+<p>
+<img src="https://github.com/ashwin-madhavan/youtube-clone/blob/main/screenshots/HomeScreen.png?raw=true" height="550px"/>
+</p>
 ## System Design
 <p>
 <img src="https://github.com/ashwin-madhavan/youtube-clone/blob/main/screenshots/Youtube_Clone_System_Design_Diagram.png?raw=true" height="550px"/>
